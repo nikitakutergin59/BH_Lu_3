@@ -1,1 +1,0 @@
-curl -X POST -H "Countent-Type: application/json" -d "{\"expr\": \"2*(5+3)-(4+6)/2\"}" http://localhost:8080/calc
