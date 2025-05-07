@@ -36,33 +36,33 @@
     2025/05/07 21:11:07 Таблица user_data успешно создана или уже существует.
     2025/05/07 21:11:07 База данных созданна
     2025/05/07 21:11:07 Сервер запущен на порту 9090
-    ```
-    дата и время могут отличаться 
-
+    ``` 
 
 5. Откройте ещё одну cmd (Win+R) и введите команду
     ```bach
     cd BH_Lu_3/cmd/runOrchestrator
     ```
--**запустите второй микро сервер**:
+    -**запустите второй микро сервер**:
     ```bash
     go run Omain.go
     ```
--**вы должны увидеть**: 
+    -**вы должны увидеть**:
+    ```
     2025/05/07 21:15:43 Оркестратор запущен на порту 8080
-дата и время могут отличаться
+    ```
 
-5. Откройте ещё одну cmd (Win+R) и введите команду что бы перейти в папку с LU
+6. Откройте ещё одну cmd (Win+R) и введите команду что бы перейти в папку с LU
     ```bash
     cd BH_Lu_3/cmd/runDemon
     ```
--**запустите трейтий микро сервер**:
+    -**запустите трейтий микро сервер**:
     ```bash
     go run Dmain.go
     ```
--**вы увидите**:
+    -**вы увидите**:
+    ```
     2025/05/07 21:20:23 Демон запущен на порту 8081
-дата и время могут отличаться
+    ```
 
 ## Взаимодействия и примеры запросов
 Откройте ещё одну cmd (Win+R)
@@ -71,9 +71,11 @@
     ```bash
     curl -X POST -H "Content-Type: application/json" -d "{\"login\":\"<your_login>\", \"password\":\"<your_password>\"}" http://localhost:9090/register
     ```
--**Вы получите ответ, пример**:
-    {"hash_login":"dda844144da6949024dc7cc621a47f73d0b3357fd1f5c5c4f9167bf026414aa7","hash_password":"b5b6f2b7707de42254c0e13ce2a2f53ce9e4bbbd282c35cb61ba70470c331440","message_0":"Данные успешно сохранены"}
-
+    -**Вы получите ответ, пример**:
+    ```                     
+    {"hash_login":"dda844144da6949024dc7cc621a47f73d0b3357fd1f5c5c4f9167bf026414aa7","hash_password":"b5b6f2b7707de42254c0e13ce2a2f53ce9e4bbbd282c35cb61ba70470c331440",
+    "message_0":"Данные успешно сохранены"}
+    ```
 2. Афторизация
     Отправте запрос
     ```bash
@@ -81,19 +83,23 @@
     ```
     -**Например**:
     ```bash
-    curl -X POST -H "Content-Type: application/json" -d "{\"login\":\"dda844144da6949024dc7cc621a47f73d0b3357fd1f5c5c4f9167bf026414aa7\", \"password\":\"b5b6f2b7707de42254c0e13ce2a2f53ce9e4bbbd282c35cb61ba70470c331440\"}" http://localhost:9090/login
+    curl -X POST -H "Content-Type: application/json" -d "{\"login\":\"dda844144da6949024dc7cc621a47f73d0b3357fd1f5c5c4f9167bf026414aa7\",         \"password\":\"b5b6f2b7707de42254c0e13ce2a2f53ce9e4bbbd282c35cb61ba70470c331440\"}" http://localhost:9090/login
     ```
--**Вы получите ответ пример**:
+    -**Вы получите ответ пример**:
+    ```
     {"message":"успешный вход","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZGE4NDQxNDRkYTY5NDkwMjRkYzdjYzYyMWE0N2Y3M2QwYjMzNTdmZDFmNWM1YzRmOTE2N2JmMDI2NDE0YWE3IiwiZXhwIjoxNzQ2NzI5NzIwLCJpYXQiOjE3NDY2NDMzMjB9.m3mwt3mgpcnoTQ23cEeVZUkyDP5eZEhA03jqiMgwAY0"}
+    ```
     //Да уж он получился очень длинный(это нормально)
--**Важно**:
+   
+    -**Важно**:
+   
     Токен действует только 24 часа!
+   
     Если вы столкнулись с тем что вы всё ввели правильно, а BH_Lu_3 выдаёт ошибку
     -**неверный логин или пароль**
     то придумайте новый логин и пароль и попробуйте занова(смотреть пункт 1)
 
-3. Вычисления
-    Поздравляю вы афторизировались и теперь можно пользоваться всем доступный функционалом.
+3. Вычисления. Поздравляю вы афторизировались и теперь можно пользоваться всем доступный функционалом.
     
     Создайте запрос на вычисление
     ```bash
@@ -105,41 +111,46 @@
     ```
 
     -**В ответ вы получите, пример**:
+    ```
     {"message":"выражение обработано","result":"11","token_id":"dda844144da6949024dc7cc621a47f73d0b3357fd1f5c5c4f9167bf026414aa7"}
-
+    ```
     -**Вот ещё несколько примеров**:
     ```bash
     curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZGE4NDQxNDRkYTY5NDkwMjRkYzdjYzYyMWE0N2Y3M2QwYjMzNTdmZDFmNWM1YzRmOTE2N2JmMDI2NDE0YWE3IiwiZXhwIjoxNzQ2NzI5NzIwLCJpYXQiOjE3NDY2NDMzMjB9.m3mwt3mgpcnoTQ23cEeVZUkyDP5eZEhA03jqiMgwAY0" -H "Content-Type: application/json" -d "{\"expr\": \"3+(2*(7-4))\"}" http://localhost:9090/calculator
     ```
     -**Ответ**:
+    ```
     {"message":"выражение обработано","result":"1","token_id":"dda844144da6949024dc7cc621a47f73d0b3357fd1f5c5c4f9167bf026414aa7"}
-
+    ```
     -**Пример**:
     ```bash
     curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZGE4NDQxNDRkYTY5NDkwMjRkYzdjYzYyMWE0N2Y3M2QwYjMzNTdmZDFmNWM1YzRmOTE2N2JmMDI2NDE0YWE3IiwiZXhwIjoxNzQ2NzI5NzIwLCJpYXQiOjE3NDY2NDMzMjB9.m3mwt3mgpcnoTQ23cEeVZUkyDP5eZEhA03jqiMgwAY0" -H "Content-Type: application/json" -d "{\"expr\": \"(10+5)*(6-2)\"}" http://localhost:9090/calculator
     ```
     -**Ответ**:
+    ```
     {"message":"выражение обработано","result":"60","token_id":"dda844144da6949024dc7cc621a47f73d0b3357fd1f5c5c4f9167bf026414aa7"}
-    
+    ```
     -**Пример**:
     ```bash
     curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZGE4NDQxNDRkYTY5NDkwMjRkYzdjYzYyMWE0N2Y3M2QwYjMzNTdmZDFmNWM1YzRmOTE2N2JmMDI2NDE0YWE3IiwiZXhwIjoxNzQ2NzI5NzIwLCJpYXQiOjE3NDY2NDMzMjB9.m3mwt3mgpcnoTQ23cEeVZUkyDP5eZEhA03jqiMgwAY0" -H "Content-Type: application/json" -d "{\"expr\": \"((8+2)*3-4)/2\"}" http://localhost:9090/calculator
     ```
     -**Ответ**:
+    ```
     {"message":"выражение обработано","result":"2","token_id":"dda844144da6949024dc7cc621a47f73d0b3357fd1f5c5c4f9167bf026414aa7"}
-
+    ```
     **Если вы введёте выражение которое не может быть посчитано или введёте нечего то поле result будет пустым, но ошибка обработанна и информация об этом храниться в логах**
 
 ## Получение выражений и результатов по JWT
 Отправте запрос 
-    ```bash
+ 
     curl -X GET -H "Authorization: Bearer <your_jwt_token>" http://localhost:9090/my_data
-    ```
-    -**Пример**:
-    ```bash
+ 
+-**Пример**: 
+
     curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZGE4NDQxNDRkYTY5NDkwMjRkYzdjYzYyMWE0N2Y3M2QwYjMzNTdmZDFmNWM1YzRmOTE2N2JmMDI2NDE0YWE3IiwiZXhwIjoxNzQ2NzI5NzIwLCJpYXQiOjE3NDY2NDMzMjB9.m3mwt3mgpcnoTQ23cEeVZUkyDP5eZEhA03jqiMgwAY0" http://localhost:9090/my_data
-    ```
-    -**Ответ**:
+    
+-**Ответ**:
+    
     {"expressions":"2*(5+3)-(4+6)/2;3+(2*(7-4));(10+5)*(6-2);;10/0;((8+2)*3-4)/2;","results":"11;1;60;;;2;"}
 
 ## Заключение
