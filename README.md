@@ -76,7 +76,7 @@
     {"hash_login":"dda844144da6949024dc7cc621a47f73d0b3357fd1f5c5c4f9167bf026414aa7","hash_password":"b5b6f2b7707de42254c0e13ce2a2f53ce9e4bbbd282c35cb61ba70470c331440",
     "message_0":"Данные успешно сохранены"}
     ```
-2. Афторизация
+2. Авторизация
     Отправте запрос
     ```bash
     curl -X POST -H "Content-Type: application/json" -d "{\"login\":\"your_hash_login\", \"password\":\"your_hash_password\"}" http://localhost:9090/login
