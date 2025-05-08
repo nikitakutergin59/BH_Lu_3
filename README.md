@@ -18,7 +18,8 @@
     ```bash
     git clone https://github.com/nikitakutergin59/BH_Lu_3
     ```
-3. Скачайте [TDM-GCC] (https://jmeubank.github.io/tdm-gcc/articles/2021-05/10.3.0-release)
+3. Скачайте [TDM-GCC] (https://jmeubank.github.io/tdm-gcc/articles/2021-05/10.3.0-release),
+а затем вставте путь до exe(папка bin) в переменную среды Path
 
 4. Запустите файл autorun.bat
     
