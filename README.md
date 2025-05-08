@@ -18,7 +18,7 @@
     ```bash
     git clone https://github.com/nikitakutergin59/BH_Lu_3
     ```
-3. Запустите файл autorun.bat(внимательно ознакомтесь с его содержимым и убедитесь что пути в нём прописанны правильно)
+3. Запустите файл autorun.bat
     
    или
    
