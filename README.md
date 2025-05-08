@@ -103,7 +103,7 @@
     
     Создайте запрос на вычисление
     ```bash
-    curl -X POST -H "Authorization: Bearer <your_jwt_token>" -H "Content-Type: application/json" -d '{\"expr\": \"<your_expression>\"}' http://localhost:9090/calculator
+    curl -X POST -H "Authorization: Bearer <your_jwt_token>" -H "Content-Type: application/json" -d "{\"expr\": \"<your_expression>\"}" http://localhost:9090/calculator
     ```
     -**Пример**:
     ```bash
