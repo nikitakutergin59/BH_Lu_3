@@ -18,8 +18,9 @@
     ```bash
     git clone https://github.com/nikitakutergin59/BH_Lu_3
     ```
-
-3. Откройте cmd (Win+R) и перейдите в папку с проэктом
+3. Запустите файл autorun
+   или
+4. Откройте cmd (Win+R) и перейдите в папку с проэктом
    
     ```bash
     cd BH_Lu_3/cmd/runBH
