@@ -18,8 +18,10 @@
     ```bash
     git clone https://github.com/nikitakutergin59/BH_Lu_3
     ```
-3. Запустите файл autorun
+3. Запустите файл autorun.bat
+    
    или
+   
 4. Откройте cmd (Win+R) и перейдите в папку с проэктом
    
     ```bash
