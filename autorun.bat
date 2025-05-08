@@ -1,5 +1,5 @@
 @echo off
-start cmd /k "go run cmd\runBH\main.go"
-start cmd /k "go run cmd\runOrchestrator\main.go"
-start cmd /k "go run cmd\runDemon\main.go"
+start cmd /k "go run cmd\runBH\BHmain.go"
+start cmd /k "go run cmd\runOrchestrator\Omain.go"
+start cmd /k "go run cmd\runDemon\Dmain.go"
 pause
