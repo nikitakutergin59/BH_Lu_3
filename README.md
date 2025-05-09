@@ -16,7 +16,9 @@
    
 3. Склонируйте проект с GitHub.
    ```bash
-   git clone 
+   git clone https://github.com/nikitakutergin59/BH_Lu_3
+   ```
+   
 2. Перейдите в папку с проектом.
     ```bash
     cd BH_Lu3/BH_Lu_3
