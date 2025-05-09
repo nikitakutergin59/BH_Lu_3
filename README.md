@@ -23,31 +23,40 @@
     ```bash
     cd ./BH_Lu_3/BH_Lu_3
     ```
-3. Постройте докер образ.
+3. Откройте cmd (Win+R) запустите и скомпилируйте docker-compose.
     ```bash
-    docker build -t bh_lu_3_app .
+    docker-compose up --build
     ```
-4. Запустите созданный образ.
-   ```bash
-    docker run -d -p 9090:9090 -p 8080:8080 -p 8081:8081 bh_lu_3_app
-    ```
-   -**Вы увидете container_id, пример**:
-    ```bash
-    da43020c2034700eb4e537074a2baba7dc018d829277040d26e45d66349fad14
-    ```
-    
-5. Проверьте всё ли коректно запустилось.
-    ```bash
-    docker logs <container_id>
-    ```
-    -**Вы должны увидеть**:
-    ```bash
-    2025/05/09 11:52:33 Демон запущен на порту 8081
-    2025/05/09 11:52:33 Оркестратор запущен на порту 8080
-    2025/05/09 11:52:33 Таблица user_data успешно создана или уже существует.
-    2025/05/09 11:52:33 База данных созданна
-    2025/05/09 11:52:33 Сервер запущен на порту 9090
-    ```
+    -**Вы должыны увидеть пример вот это**:
+   
+   [+] Running 7/7
+   
+ ✔ bh                              Built                                                                              0.0s 
+ 
+ ✔ demon                           Built                                                                              0.0s 
+ 
+ ✔ orchestrator                    Built                                                                              0.0s 
+ 
+ ✔ Network bh_lu_3_default         Created                                                                            0.0s 
+ 
+ ✔ Container orchestrator_service  Created                                                                            0.3s 
+ 
+ ✔ Container bh_service            Created                                                                            0.3s 
+ 
+ ✔ Container demon_service         Created                                                                            0.3s 
+ 
+Attaching to bh_service, demon_service, orchestrator_service
+
+orchestrator_service  | 2025/05/09 21:39:24 Оркестратор запущен на порту 8080
+
+demon_service         | 2025/05/09 21:39:24 Демон запущен на порту 8081
+
+bh_service            | 2025/05/09 21:39:24 Таблица user_data успешно создана или уже существует.
+
+bh_service            | 2025/05/09 21:39:24 База данных созданна
+
+bh_service            | 2025/05/09 21:39:24 Сервер запущен на порту 9090
+
     
 ## Взаимодействия и примеры запросов
 Откройте cmd (Win+R)
