@@ -13,7 +13,10 @@
 
 ## Запуск
 1. Установите [Docker](https://www.docker.com/).
-
+   
+3. Склонируйте проект с GitHub.
+   ```bash
+   git clone 
 2. Перейдите в папку с проектом.
     ```bash
     cd BH_Lu3/BH_Lu_3
