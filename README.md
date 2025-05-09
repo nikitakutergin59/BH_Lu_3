@@ -18,9 +18,9 @@
 
   -**Не включена виртуализация в BIOS**
   
-  -**Не скачан Linux для Windows(обычно должен скачиваться вместе с Docker**
+  -**Не скачан Linux для Windows(обычно должен скачиваться вместе с Docker)**
    
-2. Откройте cmd (Win+R) и cклонируйте проект с GitHub.
+2. Откройте cmd от имени администратора и cклонируйте проект с GitHub.
    ```bash
    git clone https://github.com/nikitakutergin59/BH_Lu_3
    ```
