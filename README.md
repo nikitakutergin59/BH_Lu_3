@@ -12,18 +12,21 @@
 3: Lu - отвечает за вычисление Task и отправку результата orchestratoru. Запущен на порту 8081.
 
 ## Запуск
-1. Установите [Docker](https://www.docker.com/).
+1. Установите [Docker](https://www.docker.com/). **Приложение Docker Dector должно быть запущено и коректно работать на момент развёртывания BH_Lu_3**
+**Возможные причины проблем:**
+  -**Не включена виртуализация в BIOS**
+  -**Не скачан Linux для Windows(обычно должен скачиваться вместо с Docker**
    
-3. Склонируйте проект с GitHub.
+2. Склонируйте проект с GitHub.
    ```bash
    git clone https://github.com/nikitakutergin59/BH_Lu_3
    ```
    
-2. Перейдите в папку с проектом.
+3. Перейдите в папку с проектом.
     ```bash
     cd ./BH_Lu_3/BH_Lu_3
     ```
-3. Откройте cmd (Win+R) запустите и скомпилируйте docker-compose.
+4. Откройте cmd (Win+R) запустите и скомпилируйте docker-compose.
     ```bash
     docker-compose up --build
     ```
