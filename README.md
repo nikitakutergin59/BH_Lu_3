@@ -20,7 +20,7 @@
   
   -**Не скачан Linux для Windows(обычно должен скачиваться вместе с Docker**
    
-2. Склонируйте проект с GitHub.
+2. Откройте cmd (Win+R) и cклонируйте проект с GitHub.
    ```bash
    git clone https://github.com/nikitakutergin59/BH_Lu_3
    ```
@@ -29,7 +29,7 @@
     ```bash
     cd ./BH_Lu_3/BH_Lu_3
     ```
-4. Откройте cmd (Win+R) запустите и скомпилируйте docker-compose.
+4. Запустите и скомпилируйте docker-compose.
     ```bash
     docker-compose up --build
     ```
